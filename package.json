@@ -3,6 +3,7 @@
     "cypress": "^13.6.1"
   },
   "dependencies": {
+    "cypress-grep": "^3.0.4",
     "cypress-xpath": "^2.0.1"
   }
 }

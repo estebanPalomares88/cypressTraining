@@ -1,21 +1,18 @@
-import { LoginPage } from "../main/E2E/pom/LoginPage";
+import { LoginPage } from "./pom/LoginPage";
 
-describe('Login scenarios in gmail page',() => {
-
-  var loginPage = new LoginPage();
+describe('Login scenarios', () => {
+  let loginPage;
 
   beforeEach(() => {
-    cy.visit('https://www.gmail.com')
-  })
+    loginPage = new LoginPage();
+    cy.visit('https://www.saucedemo.com/v1/index.html');
+    
+  });
 
-  it('Succes Login', () => {
-    cy.get(loginPage.userInput)
-    .type('testUser8892@gmail.com')
-
-    cy.get(loginPage.nextButton)
-    .click()
-
-    cy.get(loginPage.passInput,{timeout: 10000})
-    //.type('Testing.2023')
-  })
-})
+  it('Successful Login', () => {
+    cy.get(loginPage.userInput).type('standard_user');
+    cy.get(loginPage.passInput).type('secret_sauce');
+    cy.get(loginPage.loginButton).click();
+    cy.title().should('eq', 'Swag Labs');
+  });
+});
