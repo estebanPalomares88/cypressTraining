@@ -1,4 +1,4 @@
-import { LoginPage } from "./pom/LoginPage";
+import { LoginPage } from "../../main/E2E/pom/LoginPage";
 
 describe('Login scenarios', () => {
   let loginPage;
