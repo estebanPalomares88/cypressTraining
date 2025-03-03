@@ -24,3 +24,6 @@ node_modules/
 # Ignore all local history of files
 .history
 .ionide
+
+# Test queries 
+*.sql
