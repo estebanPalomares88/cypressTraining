@@ -14,10 +14,18 @@ module.exports = defineConfig({
             password: 'world123',
             port: 5432,
           });
-          await client.connect();
-          const res = await client.query(query);
-          await client.end();
-          return res;
+          try {
+            await client.connect();
+            const res = await client.query(query);
+            await client.end();
+            return res;
+          }
+          catch (e) {
+            throw e;
+          }
+          finally {
+            await client.end();
+          }
         },
       });
     },
