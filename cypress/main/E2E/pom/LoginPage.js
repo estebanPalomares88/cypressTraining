@@ -1,8 +1,9 @@
 export class LoginPage {
 
     constructor(){
-        this.userInput = '#identifierId'
-        this.nextButton = '#identifierNext'
-        this.passInput = '#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input'
+        this.userInput = '#user-name';
+        this.passInput = '#password';
+        this.loginButton = '#login-button';
+        this.tittle = 'Swag Labs';
     }
 }
